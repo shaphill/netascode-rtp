@@ -1,0 +1,7 @@
+---
+all:
+  children:
+    ndfc:
+      hosts:
+        nac-fabric1:
+          ansible_host: 10.0.223.201
