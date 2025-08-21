@@ -1,0 +1,21 @@
+---
+vxlan:
+  overlay:
+    vrfs:
+      - name: demo_vrf
+        vrf_id: 1000
+        vlan_id: 1000
+        vrf_attach_group: all
+      - name: jr-dc3-v1
+        vrf_id: 100
+        vlan_id: 100
+        vrf_attach_group: all
+      - name: jr-msd-v1
+        vrf_id: 50000
+        vrf_attach_group: all
+    vrf_attach_groups:
+      - name: all
+        switches:
+          - hostname: tme-dc3-leaf1
+          - hostname: tme-dc3-leaf2
+          - hostname: tme-dc3-spine1

@@ -1,0 +1,14 @@
+---
+  vxlan:
+    overlay:   
+      network_attach_groups:
+        - name: VMware-Servers
+          switches:
+            - hostname: tme-dc3-leaf1
+              ports: 
+                - Ethernet1/3
+                - Ethernet1/4
+            - hostname: tme-dc3-leaf2
+              ports:
+                - Ethernet1/3
+                - Ethernet1/4

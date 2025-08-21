@@ -1,0 +1,29 @@
+---
+vxlan:
+  overlay:
+    networks:
+      - name: demo_net_103
+        net_id: 103
+        vlan_id: 103
+        vrf_name: demo_vrf
+        gw_ip_address: 192.168.103.1/24
+        network_attach_group: VMware-Servers
+      - name: demo_net_104
+        net_id: 104
+        vlan_id: 104
+        vrf_name: demo_vrf
+        gw_ip_address: 192.168.104.1/24
+        network_attach_group: VMware-Servers
+      - name: demo_net_203
+        net_id: 203
+        vlan_id: 203
+        vrf_name: demo_vrf
+        gw_ip_address: 192.168.203.1/24
+        network_attach_group: VMware-Servers
+      - name: demo_net_204
+        net_id: 204
+        vlan_id: 204
+        vrf_name: demo_vrf
+        gw_ip_address: 192.168.204.1/24
+        network_attach_group: VMware-Servers
+

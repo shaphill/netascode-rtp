@@ -1,12 +1,15 @@
 ---
 vxlan:
   fabric:
-    name: MTV-nac
+    name: tme-dc3-NaC
     type: VXLAN_EVPN
   global:
     bgp_asn: "65010"
+    dns_servers:
+      - ip_address: 10.0.226.251
+        vrf: management
     ntp_servers:
-      - ip_address: 10.16.245.11
+      - ip_address: 64.102.244.57
         vrf: management
     ptp:
       enable: true

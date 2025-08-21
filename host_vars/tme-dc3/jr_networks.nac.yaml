@@ -1,0 +1,24 @@
+---
+vxlan:
+  overlay:
+    networks:
+      - name: jr-vlan-1510
+        net_id: 1510
+        vlan_id: 1510
+        vrf_name: jr-dc3-v1
+        gw_ip_address: 10.0.100.1/24
+        network_attach_group: VMware-Servers
+      - name: jr-vlan-1512
+        net_id: 1512
+        vlan_id: 1512
+        vrf_name: jr-dc3-v1
+        gw_ip_address: 10.0.102.1/24
+        network_attach_group: VMware-Servers
+      - name: jr-vlan-1520
+        net_id: 1520
+        vlan_id: 1520
+        vrf_name: jr-dc3-v1
+        gw_ip_address: 10.0.120.1/24
+        network_attach_group: VMware-Servers
+
+

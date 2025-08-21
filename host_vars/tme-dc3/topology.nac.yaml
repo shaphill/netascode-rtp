@@ -1,0 +1,22 @@
+---
+vxlan:
+  topology:
+    switches:
+      - name: tme-dc3-leaf1
+        serial_number: FLM27160SZY
+        role: leaf
+        management:
+          management_ipv4_address: 10.0.223.245
+          default_gateway_v4: 10.0.223.1
+      - name: tme-dc3-leaf2
+        serial_number: FLM27160GKQ
+        role: leaf
+        management:
+          management_ipv4_address: 10.0.223.246
+          default_gateway_v4: 10.0.223.1
+      - name: tme-dc3-spine1
+        serial_number: FDO27022EUP
+        role: border_gateway_spine
+        management:
+          management_ipv4_address: 10.0.223.244
+          default_gateway_v4: 10.0.233.1
