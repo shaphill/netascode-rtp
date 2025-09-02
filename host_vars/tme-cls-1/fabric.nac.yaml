@@ -4,7 +4,7 @@ vxlan:
     name: tme-dc3-NaC
     type: VXLAN_EVPN
   global:
-    bgp_asn: "65010"
+    bgp_asn: "65003"
     dns_servers:
       - ip_address: 10.0.226.251
         vrf: management

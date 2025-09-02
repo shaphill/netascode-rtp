@@ -1,0 +1,58 @@
+---
+vxlan:
+  overlay_extensions:
+    vrf_lites:
+      - name: bgp-vrf-lite-jr-dc3-v1
+        vrf: jr-dc3-v1
+        redistribution:
+          - source: bgp
+            route_map_ipv4: fabric-rmp-redist-bgp
+          # - source: ospf
+          #   route_map_ipv4: fabric-rmp-redist-ospf
+          - source: direct
+            route_map_ipv4: fabric-rmp-redist-direct
+          # - source: static
+          #   route_map_ipv4: fabric-rmp-redist-static
+        switches:
+          - name: tme-dc3-spine1
+            router_id: 10.2.0.3
+            # loopback_id:  
+            bgp_peers:
+              - address: 10.10.27.2
+                remote_as: 65004
+                local_as: 65003
+                description: tme-nxos-1
+                update_source: Ethernet1/33.2
+                # bfd:
+                  # enabled: true
+                # disable_connected_check: true
+                # remove_private_as: true
+                # remove_private_as_all: true
+                # password: 014903c077689077e5b4548432c3d91d  # 3DES encrypted password
+      - name: bgp-vrf-lite-demo_vrf
+        vrf: demo_vrf
+        redistribution:
+          - source: bgp
+            route_map_ipv4: fabric-rmp-redist-bgp
+          # - source: ospf
+          #   route_map_ipv4: fabric-rmp-redist-ospf
+          - source: direct
+            route_map_ipv4: fabric-rmp-redist-direct
+          # - source: static
+          #   route_map_ipv4: fabric-rmp-redist-static
+        switches:
+          - name: tme-dc3-spine1
+            router_id: 10.2.0.3
+            # loopback_id:  
+            bgp_peers:
+              - address: 10.10.30.2
+                remote_as: 65004
+                local_as: 65003
+                description: tme-nxos-1
+                update_source: Ethernet1/33.7
+                # bfd:
+                  # enabled: true
+                # disable_connected_check: true
+                # remove_private_as: true
+                # remove_private_as_all: true
+                # password: 014903c077689077e5b4548432c3d91d  # 3DES encrypted password

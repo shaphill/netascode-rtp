@@ -1,0 +1,35 @@
+---
+  vxlan:
+    topology:
+      switches:
+        - name: tme-dc3-spine1
+          interfaces:
+          - name: Ethernet1/33.2
+            mode: routed_sub
+            description: 'jr-dc3-v1 Routed Sub-Interface'
+            enabled: true
+            dot1q_id: 2
+            vrf: jr-dc3-v1
+            mtu: 1500
+            ipv4_address: 10.10.27.1/30
+            # ipv6_address: 2021:10:1:1::1/64
+          - name: Ethernet1/33.7
+            mode: routed_sub
+            description: 'demo_vrf Routed Sub-Interface'
+            enabled: true
+            dot1q_id: 7
+            vrf: demo_vrf
+            mtu: 1500
+            ipv4_address: 10.10.30.1/30
+    overlay:   
+      network_attach_groups:
+        - name: VMware-Servers
+          switches:
+            - hostname: tme-dc3-leaf1
+              ports: 
+                - Ethernet1/3
+                - Ethernet1/4
+            - hostname: tme-dc3-leaf2
+              ports:
+                - Ethernet1/3
+                - Ethernet1/4

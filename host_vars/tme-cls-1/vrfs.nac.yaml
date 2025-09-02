@@ -10,9 +10,10 @@ vxlan:
         vrf_id: 100
         vlan_id: 100
         vrf_attach_group: all
-      - name: jr-msd-v1
-        vrf_id: 50000
-        vrf_attach_group: all
+      # - name: jr-msd-v1
+      #   vrf_id: 50000
+      #   vlan_id: 
+      #   vrf_attach_group: all
     vrf_attach_groups:
       - name: all
         switches:
